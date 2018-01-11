@@ -23,13 +23,14 @@
 <br/>
 <strong>Cost for a day pass </strong>
 <p>6 and under <span><input type="text" placeholder="Day pass"></span></p>
-<p>7-17 <span><input type="text" placeholder="7-17"></span></p>
-<p>18-69 <span><input type="text" placeholder="18-69"></span></p>
-<p>Senior <span><input type="text" placeholder="Senior"></span></p>
+<p>7-17 <span><input type="text" placeholder="7-17"r id="$7-17"></span></p>
+<p>18-69 <span><input type="text" placeholder="18-69" id="$18-69"></span></p>
+<p>Senior <span><input type="text" placeholder="Senior" id="$Senior"></span></p>
 <strong>Rental price</strong>
 <p>Ski Price <span><input type="text" placeholder="Ski price"></span></p>
 <p>Snowboards Price <span><input type="text" placeholder="Snowboard Price"></span></p>
-
+<button onclick="addAMountain()">Add a mountain</button>
+<script src="addamountain.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script>
   // Initialize Firebase
