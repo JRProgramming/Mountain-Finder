@@ -9,6 +9,4 @@ alert(priceOf6AndUnder)
 alert(priceOf7to17)
 alert(priceOf18to69)
 alert(priceOfSenior)
-
-alert(childFriendlySelected)
 }
