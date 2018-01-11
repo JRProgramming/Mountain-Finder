@@ -1,7 +1,7 @@
-var priceOf6AndUnder = document.getElementById("$6AndUnder").innerHTML
-var priceOf7to17 = document.getElementById("$7-17").innerHTML
-var priceof18to69 = document.getElementById("$18-69").innerHTML
-var priceOfSenior = document.getElementById("$Senior").innerHTML
+var priceOf6AndUnder = document.getElementById("$6AndUnder").value
+var priceOf7to17 = document.getElementById("$7-17").value
+var priceof18to69 = document.getElementById("$18-69").value
+var priceOfSenior = document.getElementById("$Senior").value
 function addAMountain()
 {
 alert(priceOf6AndUnder)
@@ -15,7 +15,7 @@ var save = firebase.database().ref('Mountain/').push({
     priceOfSenior: priceOfSenior
   });
 var id = save.key
-firebase.database().ref('user/' + id).update({
+firebase.database().ref('Mountain/' + id).update({
 identification: id
 })
 }
