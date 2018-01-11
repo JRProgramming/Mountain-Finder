@@ -1,3 +1,16 @@
 <h1>Welcome to the Mountain Finder</h1>
 <h2>Search for Mountains in Vermont.</h2>
 <input type="text"><br>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC4d5ovqBY3zyqC3ebO35BJsoGokWEseQw",
+    authDomain: "mountain-finder.firebaseapp.com",
+    databaseURL: "https://mountain-finder.firebaseio.com",
+    projectId: "mountain-finder",
+    storageBucket: "mountain-finder.appspot.com",
+    messagingSenderId: "336140217184"
+  };
+  firebase.initializeApp(config);
+</script>
