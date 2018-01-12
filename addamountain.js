@@ -9,21 +9,22 @@ for(i=0;i<childRating.length;i++)
 {
     if(childRating[i].checked)
     {
-     var checked = childRating[i].value
+     var cfChecked = childRating[i].value
     }
 }
-if(checked == null)
+if(cfChecked != null)
     {
-        alert("nothing")
+    var save = firebase.database().ref('Mountain/').push({
+        priceOf6AndUnder: priceOf6AndUnder,
+        priceOf7to17: priceOf7to17,
+        priceOf18to69: priceOf18to69,
+        priceOfSenior: priceOfSenior,
+        ChildFriendly: cfChecked
+    });
+    var id = save.key
+        firebase.database().ref('Mountain/' + id).update({
+            identification: id
+        })
     }
-var save = firebase.database().ref('Mountain/').push({
-    priceOf6AndUnder: priceOf6AndUnder,
-    priceOf7to17: priceOf7to17,
-    priceOf18to69: priceOf18to69,
-    priceOfSenior: priceOfSenior
-  });
-var id = save.key
-firebase.database().ref('Mountain/' + id).update({
-identification: id
-})
+
 }
