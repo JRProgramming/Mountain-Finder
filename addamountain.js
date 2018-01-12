@@ -12,7 +12,10 @@ for(i=0;i<childRating.length;i++)
      var checked = childRating[i].value
     }
 }
-alert(checked)
+if checked == null
+    {
+        alert("nothing")
+    }
 var save = firebase.database().ref('Mountain/').push({
     priceOf6AndUnder: priceOf6AndUnder,
     priceOf7to17: priceOf7to17,
