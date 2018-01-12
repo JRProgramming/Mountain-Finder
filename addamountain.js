@@ -8,4 +8,14 @@ alert(priceOf6AndUnder)
 alert(priceOf7to17)
 alert(priceOf18to69)
 alert(priceOfSenior)
+var save = firebase.database().ref('Mountain/').push({
+    priceOf6AndUnder: priceOf6AndUnder,
+    priceOf7to17: priceOf7to17,
+    priceOf18to69: priceOf18to69,
+    priceOfSenior: priceOfSenior
+  });
+var id = save.key
+firebase.database().ref('Mountain/' + id).update({
+identification: id
+})
 }
