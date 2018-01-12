@@ -12,7 +12,7 @@ for(i=0;i<childRating.length;i++)
      var checked = childRating[i].value
     }
 }
-if checked == null
+if checked == underfined
     {
         alert("nothing")
     }
