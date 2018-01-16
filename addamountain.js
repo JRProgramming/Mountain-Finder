@@ -7,8 +7,16 @@ var priceOfSenior = document.getElementById("$Senior").value;
 var childRating = document.getElementsByName("CF");
 var amountOfSnow = document.getElementByNames("SQ");
 var foodQuality = document.getElementByNames("FQ");
-for(i=0;i<childRating.length;i++)
+var radioButtonsArray = [childRating, amountOfSnow, foodQuality]
+for(var i=0;i<childRating.length;i++)
 {
+    for(var index=0;index<radioButtonsArray.length;index++)
+    {
+        if(radioButtonsArray[index][i].checked)
+        {
+         var dictionaryOfCheckedButtons = [radioButtonsArray[index]: radioButtonsArray[index][i].value]
+        }
+    }
     if(childRating[i].checked)
     {
      var crChecked = childRating[i].value;
@@ -22,6 +30,7 @@ for(i=0;i<childRating.length;i++)
      var foodQuality = foodQuality[i].value;
     }
 }
+    alert(dictionaryOfCheckedButtons)
 if(crChecked != null && aSChecked != null)
     {
     var save = firebase.database().ref('Mountain/').push({
