@@ -14,7 +14,7 @@ for(var i=0;i<childRating.length;i++)
     {
         if(radioButtonsArray[index][i].checked)
         {
-         var dictionaryOfCheckedButtons = [radioButtonsArray[index]: radioButtonsArray[index][i].value]
+         var dictionaryOfCheckedButtons = {radioButtonsArray[index]: radioButtonsArray[index][i].value}
         }
     }
     if(childRating[i].checked)
