@@ -24,7 +24,6 @@ for(var i=0;i<childRating.length;i++)
      var foodQuality = foodQuality[i].value;
     }
 }
-    alert(dictionaryOfCheckedButtons)
 if(crChecked != null && aSChecked != null)
     {
     var save = firebase.database().ref('Mountain/').push({
