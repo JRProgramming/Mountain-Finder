@@ -10,13 +10,7 @@ var foodQuality = document.getElementByNames("FQ");
 var radioButtonsArray = [childRating, amountOfSnow, foodQuality]
 for(var i=0;i<childRating.length;i++)
 {
-    for(var index=0;index<radioButtonsArray.length;index++)
-    {
-        if(radioButtonsArray[index][i].checked)
-        {
-         var dictionaryOfCheckedButtons = {radioButtonsArray[index]: radioButtonsArray[index][i].value}
-        }
-    }
+    alert(radioButtonsArray);
     if(childRating[i].checked)
     {
      var crChecked = childRating[i].value;
