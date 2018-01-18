@@ -7,7 +7,6 @@ var priceOfSenior = document.getElementById("$Senior").value;
 var childRating = document.getElementsByName("CF");
 var amountOfSnow = document.getElementByNames("SQ");
 var foodQuality = document.getElementByNames("FQ");
-var radioButtonsArray = [childRating, amountOfSnow, foodQuality]
 for(var i=0;i<childRating.length;i++)
 {
     alert(radioButtonsArray);
