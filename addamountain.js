@@ -5,8 +5,8 @@ var priceOf7to17 = document.getElementById("$7>17").value;
 var priceOf18to69 = document.getElementById("$18>69").value;
 var priceOfSenior = document.getElementById("$Senior").value;
 var childRating = document.getElementsByName("CF");
-var amountOfSnow = document.getElementsByNames("SQ");
-var foodQuality = document.getElementsByNames("FQ");
+var amountOfSnow = document.getElementsByName("SQ");
+var foodQuality = document.getElementsByName("FQ");
 for(var i=0;i<childRating.length;i++)
 {
     if(childRating[i].checked)
