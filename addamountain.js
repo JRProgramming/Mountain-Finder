@@ -22,7 +22,7 @@ for(var i=0;i<childRating.length;i++)
      var foodQuality = foodQuality[i].value;
     }
 }
-if(crChecked != null && aSChecked != null)
+if(crChecked != null)
     {
     var save = firebase.database().ref('Mountain/').push({
         priceOf6AndUnder: priceOf6AndUnder,
