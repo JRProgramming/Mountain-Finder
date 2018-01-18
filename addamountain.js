@@ -9,7 +9,6 @@ var amountOfSnow = document.getElementByNames("SQ");
 var foodQuality = document.getElementByNames("FQ");
 for(var i=0;i<childRating.length;i++)
 {
-    alert(radioButtonsArray);
     if(childRating[i].checked)
     {
      var crChecked = childRating[i].value;
