@@ -45,11 +45,11 @@ if(crChecked != null && aSChecked != null && fQChecked != null)
         firebase.database().ref('Mountain/' + id).update({
             identification: id
         })
-    firebase.database().ref('Mountain/').set("I'm writing data", function(error) {
+    firebase.database().ref('Completion/').set("I'm writing data", function(error) {
         if (error) {
             alert("Data could not be saved." + error);
         } else {
-            alert("Data saved successfully.");
+            location.href = "https://jrprogramming.github.io/mountainfinder"
         }
       });
     }
