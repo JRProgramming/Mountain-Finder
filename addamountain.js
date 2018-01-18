@@ -30,7 +30,8 @@ if(crChecked != null && aSChecked != null && fQChecked != null)
         priceOf18to69: priceOf18to69,
         priceOfSenior: priceOfSenior,
         ChildFriendly: crChecked,
-        AmountOfSnow: aSChecked
+        AmountOfSnow: aSChecked,
+        FoodQuality: fQChecked
     });
     var id = save.key
         firebase.database().ref('Mountain/' + id).update({
