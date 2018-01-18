@@ -29,7 +29,7 @@ if(crChecked != null && aSChecked != null && fQChecked != null)
         priceOf7to17: priceOf7to17,
         priceOf18to69: priceOf18to69,
         priceOfSenior: priceOfSenior,
-        ChildFriendly: crChecked
+        ChildFriendly: crChecked,
         AmountOfSnow: aSChecked
     });
     var id = save.key
