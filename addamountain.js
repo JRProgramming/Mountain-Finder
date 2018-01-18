@@ -5,8 +5,8 @@ var priceOf7to17 = document.getElementById("$7>17").value;
 var priceOf18to69 = document.getElementById("$18>69").value;
 var priceOfSenior = document.getElementById("$Senior").value;
 var childRating = document.getElementsByName("CF");
-var amountOfSnow = document.getElementByNames("SQ");
-var foodQuality = document.getElementByNames("FQ");
+var amountOfSnow = document.getElementsByNames("SQ");
+var foodQuality = document.getElementsByNames("FQ");
 for(var i=0;i<childRating.length;i++)
 {
     if(childRating[i].checked)
@@ -19,10 +19,10 @@ for(var i=0;i<childRating.length;i++)
     } 
     if(foodQuality[i].checked)
     {
-     var foodQuality = foodQuality[i].value;
+     var fQChecked = foodQuality[i].value;
     }
 }
-if(crChecked != null)
+if(crChecked != null && aSChecked != null && fQChecked != null)
     {
     var save = firebase.database().ref('Mountain/').push({
         priceOf6AndUnder: priceOf6AndUnder,
