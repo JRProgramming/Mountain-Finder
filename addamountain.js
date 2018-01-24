@@ -49,7 +49,7 @@ if(crChecked != null && aSChecked != null && fQChecked != null)
         firebase.database().ref('Mountain/' + id).update({
             identification: id
         })
-    firebase.database().ref('Mountain/').update("", function(error) {
+    firebase.database().ref('Mountain/').update("Data is logged", function(error) {
         if (error) {
             alert("Data could not be saved." + error);
         } else {
