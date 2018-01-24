@@ -8,6 +8,8 @@ var priceOf18to69 = document.getElementById("$18>69").value;
 var priceOfSenior = document.getElementById("$Senior").value;
 var skiRentalPrice = document.getElementById("skiPrice").value;
 var snowboardRentalPrice = document.getElementById("snowboardPrice").value;
+var linkToWebsite = document.getElementById("linkToWebsite").value;
+var linkToMap = document.getElementById("linkToMap").value;
 var childRating = document.getElementsByName("CF");
 var amountOfSnow = document.getElementsByName("SQ");
 var foodQuality = document.getElementsByName("FQ");
@@ -39,7 +41,9 @@ if(crChecked != null && aSChecked != null && fQChecked != null)
         AmountOfSnow: aSChecked,
         FoodQuality: fQChecked,
         SkiRentalPrice: skiRentalPrice,
-        SnowboardRentalPrice: snowboardRentalPrice
+        SnowboardRentalPrice: snowboardRentalPrice,
+        LinkToWebsite: linkToWebsite,
+        LinkToMap: linkToMap
     });
     var id = save.key
         firebase.database().ref('Mountain/' + id).update({
