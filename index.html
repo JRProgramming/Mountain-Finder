@@ -10,7 +10,7 @@ var mountains = [];
 var updateData = firebase.database().ref("Mountain");
 updateData.on("child_added", function(data, prevChildKey) {
  var data = data.val()
- mountains = data
+ mountains.append(data)
  })
    alert(mountains) 
        var textfield, filter, ul, li, a, i;
