@@ -1,11 +1,13 @@
 <h1>Welcome to the Mountain Finder</h1>
 <h2>Search for Mountains in Vermont.</h2>
-<input type="text"><br>
+<input type="text" id="textField"><br>
 <button onclick="searchMountain()" placeholder="Find a mountain">Find a mountain</button>
 <script>
   function searchMountain()
   {
-    
+       var textfield, filter, ul, li, a, i;
+    textfield = document.getElementById("textField");
+    filter = textfield.value.toUpperCase();
   }
 </script>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
