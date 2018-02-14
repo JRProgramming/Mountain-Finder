@@ -6,8 +6,6 @@ var priceOf6AndUnder = document.getElementById("$6AndUnder").value;
 var priceOf7to17 = document.getElementById("$7>17").value;
 var priceOf18to69 = document.getElementById("$18>69").value;
 var priceOfSenior = document.getElementById("$Senior").value;
-var skiRentalPrice = document.getElementById("skiPrice").value;
-var snowboardRentalPrice = document.getElementById("snowboardPrice").value;
 var linkToWebsite = document.getElementById("linkToWebsite").value;
 var linkToMap = document.getElementById("linkToMap").value;
 var childRating = document.getElementsByName("CF");
@@ -40,8 +38,6 @@ if(crChecked != null && aSChecked != null && fQChecked != null)
         ChildFriendly: crChecked,
         AmountOfSnow: aSChecked,
         FoodQuality: fQChecked,
-        SkiRentalPrice: skiRentalPrice,
-        SnowboardRentalPrice: snowboardRentalPrice,
         LinkToWebsite: linkToWebsite,
         LinkToMap: linkToMap
     });
