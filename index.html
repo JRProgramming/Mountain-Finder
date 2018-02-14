@@ -11,11 +11,19 @@ var updateData = firebase.database().ref("Mountain");
 updateData.on("child_added", function(data, prevChildKey) {
  var data = data.val()
  mountains.push(data.MountainName)
-alert(mountains)
+
  })
-       var textfield, filter, ul, li, a, i;
+        firebase.database().ref('Mountains/').set("Data is logged", function(error) {
+        if (error) {
+            alert("Data could not be saved." + error);
+        } else {
+            alert(mountains)
+          var textfield, filter, ul, li, a, i;
     textfield = document.getElementById("textField");
     filter = textfield.value.toUpperCase();
+        }
+      });
+       
 
   }
 </script>
