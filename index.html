@@ -10,9 +10,9 @@ var mountains = [];
 var updateData = firebase.database().ref("Mountain");
 updateData.on("child_added", function(data, prevChildKey) {
  var data = data.val()
-alert(data.MountainName)
+ mountains.push(data.MountainName)
+alert(mountains)
  })
-    alert(mountains)
        var textfield, filter, ul, li, a, i;
     textfield = document.getElementById("textField");
     filter = textfield.value.toUpperCase();
