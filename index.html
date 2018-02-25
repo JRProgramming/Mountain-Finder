@@ -8,7 +8,10 @@
 
   function searchMountain()
   {
+    if(document.getElementById("textField").value.length == 1)
+    {
     loadSearchSuggestions()
+    }
 var mountains = [];
 var updateData = firebase.database().ref("Mountain");
 updateData.on("child_added", function(data, prevChildKey) {
