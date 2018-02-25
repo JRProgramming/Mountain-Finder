@@ -49,7 +49,25 @@ updateData.on("child_added", function(data, prevChildKey) {
   
   window.onload = function()
   {
-alert("Hi")
+var mountains = [];
+var updateData = firebase.database().ref("Mountain");
+updateData.on("child_added", function(data, prevChildKey) {
+ var data = data.val()
+ mountains.push(data.MountainName)
+
+ })
+    
+    firebase.database().ref('Mountains/').set("Data is logged", function(error) {
+        if (error) {
+            alert("Data could not be saved." + error);
+        } else {
+         var li = document.createElement("li");        // Create a <button> element
+         var t = document.createTextNode(mountains[0]);       // Create a text node
+         li.appendChild(t);                                // Append the text to <button>
+         document.body.appendChild(li);                    
+        }
+    })
+   
   }
 </script>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
