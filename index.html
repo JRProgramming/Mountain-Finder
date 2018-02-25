@@ -51,17 +51,18 @@ updateData.on("child_added", function(data, prevChildKey) {
             alert("Data could not be saved." + error);
         } else {
           var ul = document.createElement("ul")
-         for(var i=0;i<mountains.length;i++)
-         {
-          var li = document.createElement("li");   
-          var a = document.createElement("a");
-          var aTitle = document.createTextNode(mountains[i])
-          a.setAttribute('href', 'https://apple.com')
-          a.appendChild(aTitle)
-          li.appendChild(a);
-          ul.appendChild(li)
-          document.body.appendChild(ul);       
-         }
+          ul.setAttribute('id', 'myUL')
+          for(var i=0;i<mountains.length;i++)
+          {
+            var li = document.createElement("li");   
+            var a = document.createElement("a");
+            var aTitle = document.createTextNode(mountains[i])
+            a.setAttribute('href', 'https://apple.com')
+            a.appendChild(aTitle)
+            li.appendChild(a);
+            ul.appendChild(li)
+            document.body.appendChild(ul);       
+          }
         }
     })
    
