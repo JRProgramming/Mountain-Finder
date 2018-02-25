@@ -1,6 +1,6 @@
 <h1>Welcome to the Mountain Finder</h1>
 <h2>Search for Mountains in Vermont.</h2>
-<input type="text" id="textField"><br>
+<input type="text" id="textField" onkeyup="searchMountain()"><br>
 <button onclick="searchMountain()" placeholder="Find a mountain">Find a mountain</button>
 
 
@@ -11,16 +11,14 @@
 var mountains = [];
 var updateData = firebase.database().ref("Mountain");
 updateData.on("child_added", function(data, prevChildKey) {
- var data = data.val()
- mountains.push(data.MountainName)
-
+var data = data.val() 
+mountains.push(data.MountainName)
  })
         firebase.database().ref('Mountains/').set("Data is logged", function(error) {
         if (error) {
             alert("Data could not be saved." + error);
         } else {
-            alert(mountains)
-          var textfield, filter, ul, li, i;
+    var textfield, filter, ul, li, i;
     textfield = document.getElementById("textField");
     filter = textfield.value.toUpperCase();
     li = document.getElementsByTagName("li");
