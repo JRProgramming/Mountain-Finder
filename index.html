@@ -5,14 +5,13 @@
 
 
 <script>
-var searchSuggestionsLoadedUp = false
+var searchSuggestionsLoaded = false
   function searchMountain()
   {
-    
-    if(searchSuggestionsLoadedUp == false)
+    if(searchSuggestionsLoaded == false)
     {
     loadSearchSuggestions()
-    searchSuggestionsLoadedUp = true
+    searchSuggestionsLoaded = true
     }
 var mountains = [];
 var updateData = firebase.database().ref("Mountain");
