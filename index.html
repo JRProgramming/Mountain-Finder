@@ -24,7 +24,7 @@ updateData.on("child_added", function(data, prevChildKey) {
     textfield = document.getElementById("textField");
     filter = textfield.value.toUpperCase();
     for (i = 0; i < mountains.length; i++) {
-        if (mountains.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        if (mountains[i].toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
@@ -53,16 +53,15 @@ updateData.on("child_added", function(data, prevChildKey) {
         } else {
          for(var i=0;i<mountains.length;i++)
          {
-         var ul = document.createElement("ul");
-         
-         var li = document.createElement("li");   
-         var a = document.createElement("a");
-         var aTitle = document.createTextNode(mountains[i])
-         a.setAttribute('href', 'https://apple.com')
-         a.appendChild(aTitle)
-         li.appendChild(a);
-         ul.appendChild(li)
-         document.body.appendChild(ul);       
+          var ul = document.createElement("ul");
+          var li = document.createElement("li");   
+          var a = document.createElement("a");
+          var aTitle = document.createTextNode(mountains[i])
+          a.setAttribute('href', 'https://apple.com')
+          a.appendChild(aTitle)
+          li.appendChild(a);
+          ul.appendChild(li)
+          document.body.appendChild(ul);       
          }
         }
     })
