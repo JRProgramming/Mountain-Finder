@@ -50,6 +50,7 @@ updateData.on("child_added", function(data, prevChildKey) {
         if (error) {
             alert("Data could not be saved." + error);
         } else {
+          var ul = document.createElement("ul")
          for(var i=0;i<mountains.length;i++)
          {
           var li = document.createElement("li");   
@@ -58,13 +59,34 @@ updateData.on("child_added", function(data, prevChildKey) {
           a.setAttribute('href', 'https://apple.com')
           a.appendChild(aTitle)
           li.appendChild(a);
-          document.body.appendChild(li);       
+          ul.appendChild(li)
+          document.body.appendChild(ul);       
          }
         }
     })
    
   }
 </script>
+
+
+<style>
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+} 
+</style>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script>
   // Initialize Firebase
