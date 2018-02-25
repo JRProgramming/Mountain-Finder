@@ -54,8 +54,9 @@ updateData.on("child_added", function(data, prevChildKey) {
          for(var i=0;i<mountains.length;i++)
          {
          var li = document.createElement("li");        
-         var t = document.createTextNode(mountains[i]);      
-         li.appendChild(t);                                
+         var title = document.createTextNode(mountains[i]); 
+         li.appendChild(title);                             
+         li.setAttribute('href', 'https://apple.com')
          document.body.appendChild(li);       
          }
         }
