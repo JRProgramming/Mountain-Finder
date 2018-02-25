@@ -13,6 +13,7 @@
   <li><a href="#">Christina</a></li>
   <li><a href="#">Cindy</a></li>
 </ul>
+
 <script>
 
   function searchMountain()
@@ -29,14 +30,11 @@ updateData.on("child_added", function(data, prevChildKey) {
             alert("Data could not be saved." + error);
         } else {
             alert(mountains)
-          var textfield, filter, ul, li, a, i;
+          var textfield, filter, ul, li, i;
     textfield = document.getElementById("textField");
     filter = textfield.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+    for (i = 0; i < mountains.length; i++) {
+        if (mountains.innerHTML.toUpperCase().indexOf(filter) > -1) {
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
@@ -47,6 +45,11 @@ updateData.on("child_added", function(data, prevChildKey) {
       });
        
 
+  }
+  
+  window.onload = function()
+  {
+alert("Hi")
   }
 </script>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
