@@ -2,17 +2,7 @@
 <h2>Search for Mountains in Vermont.</h2>
 <input type="text" id="textField"><br>
 <button onclick="searchMountain()" placeholder="Find a mountain">Find a mountain</button>
-<ul id="myUL">
-  <li><a href="#">Adele</a></li>
-  <li><a href="#">Agnes</a></li>
 
-  <li><a href="#">Billy</a></li>
-  <li><a href="#">Bob</a></li>
-
-  <li><a href="#">Calvin</a></li>
-  <li><a href="#">Christina</a></li>
-  <li><a href="#">Cindy</a></li>
-</ul>
 
 <script>
 
@@ -61,10 +51,13 @@ updateData.on("child_added", function(data, prevChildKey) {
         if (error) {
             alert("Data could not be saved." + error);
         } else {
-         var li = document.createElement("li");        // Create a <button> element
-         var t = document.createTextNode(mountains[0]);       // Create a text node
-         li.appendChild(t);                                // Append the text to <button>
-         document.body.appendChild(li);                    
+         for(var i=0;i<mountains.length;i++)
+         {
+         var li = document.createElement("li");        
+         var t = document.createTextNode(mountains[i]);      
+         li.appendChild(t);                                
+         document.body.appendChild(li);       
+         }
         }
     })
    
