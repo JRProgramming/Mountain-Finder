@@ -8,11 +8,6 @@
 var searchSuggestionsLoaded = false
   function searchMountain()
   {
-    if(searchSuggestionsLoaded == false)
-    {
-    loadSearchSuggestions()
-    searchSuggestionsLoaded = true
-    }
 var mountains = [];
 var updateData = firebase.database().ref("Mountain");
 updateData.on("child_added", function(data, prevChildKey) {
@@ -41,7 +36,8 @@ mountains.push(data.MountainName)
 
   }
   
-function loadSearchSuggestions() {
+window.onload = function()
+{
 var mountains = [];
 var updateData = firebase.database().ref("Mountain");
 updateData.on("child_added", function(data, prevChildKey) {
