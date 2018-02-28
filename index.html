@@ -2,8 +2,6 @@
 <h2>Search for Mountains in Vermont.</h2>
 <input type="text" id="textField" onkeyup="searchMountain()"><br>
 <button onclick="searchMountain()" placeholder="Find a mountain">Find a mountain</button>
-
-
 <script>
 var searchSuggestionsLoaded = false
   function searchMountain()
@@ -57,7 +55,7 @@ updateData.on("child_added", function(data, prevChildKey) {
             var li = document.createElement("li");   
             var a = document.createElement("a");
             var aTitle = document.createTextNode(mountains[i])
-            a.setAttribute('href', 'https://apple.com')
+            a.setAttribute('href', 'https://jrprogramming.github.io/mountainfinder/?' + mountains[i])
             a.appendChild(aTitle)
             li.appendChild(a);
             ul.appendChild(li)
