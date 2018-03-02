@@ -55,7 +55,7 @@ updateData.on("child_added", function(data, prevChildKey) {
             var li = document.createElement("li");   
             var a = document.createElement("a");
             var aTitle = document.createTextNode(mountains[i])
-            a.setAttribute('onclick', 'addMountainToStorage()')
+            a.setAttribute('href', 'javascript:addMountainToStorage()')
             a.appendChild(aTitle)
             li.appendChild(a);
             ul.appendChild(li)
