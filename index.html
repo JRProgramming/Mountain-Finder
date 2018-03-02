@@ -4,6 +4,7 @@
 <button onclick="searchMountain()" placeholder="Find a mountain">Find a mountain</button>
 <script>
 var searchSuggestionsLoaded = false
+var titleOfMountain = ""
   function searchMountain()
   {
 var mountains = [];
@@ -36,7 +37,7 @@ mountains.push(data.MountainName)
   
 function addMountainToStorage()
 {
-  alert("Sup cool dudes")
+  alert(titleOfMountain)
 }  
   
 window.onload = function()
@@ -60,6 +61,7 @@ updateData.on("child_added", function(data, prevChildKey) {
             var li = document.createElement("li");   
             var a = document.createElement("a");
             var aTitle = document.createTextNode(mountains[i])
+            titleOfMountain = aTitle
             a.setAttribute('href', 'javascript:addMountainToStorage()')
             a.appendChild(aTitle)
             li.appendChild(a);
