@@ -62,9 +62,10 @@ updateData.on("child_added", function(data, prevChildKey) {
                  mountain = mountain + string[x]
                }
             }
-            alert(mountain)
+            mountains[i] = mountain
             var li = document.createElement("li");   
             var a = document.createElement("a");
+            a.setAttribute("href", "https://jrprogramming.github.io/mountainfinder/?" + mountains[i])
             var aTitle = document.createTextNode(mountains[i])
             a.appendChild(aTitle)
             li.appendChild(a);
