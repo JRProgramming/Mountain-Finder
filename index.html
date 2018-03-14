@@ -37,7 +37,7 @@ mountains.push(data.MountainName)
   
 function addMountainToStorage()
 {
-  alert(titleOfMountain)
+  alert(document.
 }  
   
 window.onload = function()
@@ -61,8 +61,8 @@ updateData.on("child_added", function(data, prevChildKey) {
             var li = document.createElement("li");   
             var a = document.createElement("a");
             var aTitle = document.createTextNode(mountains[i])
-            titleOfMountain = mountains[i]
-            a.setAttribute('href', 'javascript:addMountainToStorage()')
+            a.setAttribute('id', '
+            a.setAttribute('href', 'https://jrprogramming.github.io/?' + mountains[i])
             a.appendChild(aTitle)
             li.appendChild(a);
             ul.appendChild(li)
