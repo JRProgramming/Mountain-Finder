@@ -53,14 +53,18 @@ updateData.on("child_added", function(data, prevChildKey) {
           ul.setAttribute('id', 'myUL')
           for(var i=0;i<mountains.length;i++)
           {
-            for (var x=0;i<mountains[i].length;i++)
+            var string = mountains[i]
+            for(var x=0;x<string.length;x++)
             {
-               
+              if string[x] != ""
+              {
+                var mountain = mountain + string[x]
+              }
             }
+            alert(mountain)
             var li = document.createElement("li");   
             var a = document.createElement("a");
             var aTitle = document.createTextNode(mountains[i])
-            a.setAttribute('href', 'https://jrprogramming.github.io/mountainFinder/?' + mountains[i])
             a.appendChild(aTitle)
             li.appendChild(a);
             ul.appendChild(li)
