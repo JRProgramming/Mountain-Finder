@@ -55,12 +55,8 @@ updateData.on("child_added", function(data, prevChildKey) {
           {
             for (var x=0;i<mountains[i].length;i++)
             {
-               if mountains[i][x] != " "
-              {
-                var mountain == mountain + mountains[i][x]
-              }
+               
             }
-            mountains[i] = mountain
             var li = document.createElement("li");   
             var a = document.createElement("a");
             var aTitle = document.createTextNode(mountains[i])
@@ -70,7 +66,6 @@ updateData.on("child_added", function(data, prevChildKey) {
             ul.appendChild(li)
             document.body.appendChild(ul);       
           }
-          alert(mountains)
         }
     })
    
