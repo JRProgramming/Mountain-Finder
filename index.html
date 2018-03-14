@@ -57,14 +57,9 @@ updateData.on("child_added", function(data, prevChildKey) {
             var mountain = ""
             for(var x=0;x<string.length;x++)
             {
-                alert(string[x])
-               if(string[x] != "")
+               if(string[x] != " ")
                {
                  mountain = mountain + string[x]
-               }
-               else
-               {
-                alert("Error: 404")
                }
             }
             alert(mountain)
