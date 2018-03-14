@@ -38,7 +38,6 @@ mountains.push(data.MountainName)
 window.onload = function()
 {
 var mountains = [];
-var mountain = ""
 var updateData = firebase.database().ref("Mountain");
 updateData.on("child_added", function(data, prevChildKey) {
  var data = data.val()
@@ -55,11 +54,16 @@ updateData.on("child_added", function(data, prevChildKey) {
           for(var i=0;i<mountains.length;i++)
           {
             var string = mountains[i]
+            var mountain = ""
             for(var x=0;x<string.length;x++)
             {
                if(string[x] != "")
                {
                  mountain = mountain + string[x]
+               }
+               else
+               {
+                alert("Error: 404")
                }
             }
             alert(mountain)
