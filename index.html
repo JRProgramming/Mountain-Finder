@@ -61,7 +61,7 @@ updateData.on("child_added", function(data, prevChildKey) {
             var li = document.createElement("li");   
             var a = document.createElement("a");
             var aTitle = document.createTextNode(mountains[i])
-            titleOfMountain = aTitle
+            titleOfMountain = mountains[i]
             a.setAttribute('href', 'javascript:addMountainToStorage()')
             a.appendChild(aTitle)
             li.appendChild(a);
