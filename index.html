@@ -64,13 +64,12 @@ function saveVariableIntoStorage(a)
             var string = mountains[i]
             var li = document.createElement("li");   
             var a = document.createElement("a");
-            var mountain = mountains[i];
-            var aTitle = document.createTextNode(mountain);
+            var aTitle = document.createTextNode(string);
             a.appendChild(aTitle)
             li.appendChild(a);
             ul.appendChild(li)
             a.onclick = function() {
-              saveVariableIntoStorage(mountain);
+              saveVariableIntoStorage(this.innerHTML);
             }
             document.body.appendChild(ul);       
           }
