@@ -50,7 +50,7 @@ updateData.on("child_added", function(data, prevChildKey) {
 function saveVariableIntoStorage(a)
   {
     sessionStorage.setItem("mountainName", a)
-    alert(sessionStorage.getItem("mountainName"))
+    location.href = "https://jrprogramming.github.io/mountainfinder/mountain.html"
   }
     
     firebase.database().ref('Mountains/').set("Data is logged", function(error) {
