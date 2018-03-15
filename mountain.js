@@ -10,8 +10,15 @@ window.onload = function()
             if (error) {
                   alert("Data could not be saved." + error);
             } else {
-            console.log(mountains)
-     }
+                for(var i=0;i<mountains.length;i++)
+                {
+                    console.log(sessionStorage.getItem("mountainName"))
+                    if(mountains[i] == sessionStorage.getItem("mountainName"))
+                    {
+                         document.getElementById("mountainName").innerHTML = mountains[i].MountainName
+                    }
+                }
+            }
    })
 }
  
