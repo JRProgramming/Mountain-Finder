@@ -44,6 +44,11 @@ updateData.on("child_added", function(data, prevChildKey) {
  mountains.push(data.MountainName)
 
  })
+function saveVariableIntoStorage(a)
+  {
+    sessionStorage.setItem("mountainName", a)
+    alert(sessionStorage.getItem("mountainName"))
+  }
     
     firebase.database().ref('Mountains/').set("Data is logged", function(error) {
         if (error) {
@@ -54,23 +59,16 @@ updateData.on("child_added", function(data, prevChildKey) {
           for(var i=0;i<mountains.length;i++)
           {
             var string = mountains[i]
-            var mountain = ""
-            
             var li = document.createElement("li");   
             var a = document.createElement("a");
-            var aTitle = document.createTextNode(mountains[i])
+            var mountain = mountains[i];
+            var aTitle = document.createTextNode(mountain);
             a.appendChild(aTitle)
             li.appendChild(a);
             ul.appendChild(li)
-            for(var x=0;x<string.length;x++)
-            {
-               if(string[x] != " ")
-               {
-                 mountain = mountain + string[x]
-               }
+            a.onclick = function() {
+              saveVariableIntoStorage(mountain);
             }
-            mountains[i] = mountain
-            a.setAttribute("href", "https://jrprogramming.github.io/mountainfinder/?" + mountains[i])
             document.body.appendChild(ul);       
           }
         }
