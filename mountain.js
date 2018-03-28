@@ -14,7 +14,7 @@ window.onload = function()
                 {
                     console.log(sessionStorage.getItem("mountainName"))
                     console.log(mountains[i].MountainName)
-                    if(mountains[i] == sessionStorage.getItem("mountainName"))
+                    if(mountains[i].MountainName == sessionStorage.getItem("mountainName"))
                     {
                          document.getElementById("mountainName").innerHTML = mountains[i].MountainName
                     }
