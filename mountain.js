@@ -13,6 +13,7 @@ window.onload = function()
                 for(var i=0;i<mountains.length;i++)
                 {
                     console.log(sessionStorage.getItem("mountainName"))
+                    console.log(mountains[i])
                     if(mountains[i] == sessionStorage.getItem("mountainName"))
                     {
                          document.getElementById("mountainName").innerHTML = mountains[i].MountainName
