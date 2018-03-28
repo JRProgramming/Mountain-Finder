@@ -17,6 +17,7 @@ window.onload = function()
                     if(mountains[i].MountainName == sessionStorage.getItem("mountainName"))
                     {
                          document.getElementById("mountainName").innerHTML = mountains[i].MountainName
+                         document.getElementById("image").innerHTML = mountains[i].LinkToMap
                     }
                 }
             }
