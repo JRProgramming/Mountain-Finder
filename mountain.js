@@ -12,12 +12,15 @@ window.onload = function()
             } else {
                 for(var i=0;i<mountains.length;i++)
                 {
-                    console.log(sessionStorage.getItem("mountainName"))
-                    console.log(mountains[i].MountainName)
                     if(mountains[i].MountainName == sessionStorage.getItem("mountainName"))
                     {
                          document.getElementById("mountainName").innerHTML = mountains[i].MountainName
                          document.getElementById("image").innerHTML = mountains[i].LinkToMap
+                        console.log(mountains[i].LinkToMap)
+                        console.log(mountains[i].AmountOfSnow)
+                        console.log(mountains[i].FoodQuality)
+                        console.log(mountains[i].ChildFriendly)
+                        console.log(mountains[i].priceOf18to69)
                     }
                 }
             }
