@@ -20,6 +20,8 @@ window.onload = function()
                          document.getElementById("foodQuality").innerHTML = mountains[i].FoodQuality
                          document.getElementById("childFriendly").innerHTML = mountains[i].ChildFriendly
                          document.getElementById("priceForAdult").innerHTML = mountains[i].priceOf18to69
+                         document.getElementById("websiteLink").href = mountains[i].LinkToWebsite
+                         document.getElementById("websiteLink").innerHTML = mountains[i].MountainName
                     }
                 }
             }
