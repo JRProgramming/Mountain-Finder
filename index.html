@@ -1,10 +1,15 @@
+
 <html>
   <head></head>
   <body>
 <h1>Welcome to the Mountain Finder</h1>
-<h2>Search for Mountains in Vermont.</h2>
-<input type="text" id="textField" onkeyup="searchMountain()"><br>
-<button onclick="searchMountain()" placeholder="Find a mountain">Find a mountain</button>
+<h2>Search for Mountains in the United States.</h2>
+<input type="text" id="textField" onkeyup="searchMountain()">
+<br>
+<br>
+<button onclick="addAMountain()">Add a mountain</button>
+<br>
+<br>
 <script>
 var searchSuggestionsLoaded = false
 var titleOfMountain = ""
@@ -50,13 +55,11 @@ var isSearched = false
             li[i].style.display = "";
         } else {
             li[i].style.display = "none";
-
         }
     }
         }
       });
        
-
   }
   
   function saveVariableIntoStorage(a)
@@ -65,7 +68,10 @@ var isSearched = false
     location.href = "https://jrprogramming.github.io/mountainfinder/mountain.html"
   }
   
-
+  function addAMountain()
+  {
+	location.href = "https://jrprogramming.github.io/mountainfinder/addamountain"	
+  }
 </script>
 
 
@@ -75,9 +81,9 @@ var isSearched = false
   padding: 0;
   margin: 0;
 }
-
 #myUL li a {
   border: 1px solid #ddd;
+  border-radius: 5px;
   margin-top: -1px; /* Prevent double borders */
   background-color: #f6f6f6;
   padding: 12px;
@@ -86,6 +92,33 @@ var isSearched = false
   color: black;
   display: block;
 } 
+
+input[type="text"]
+{
+	position: -webkit-sticky;
+	position: sticky;
+    top: 0;
+    height: 30px;
+    width: 100%;
+    margin: auto;
+    text-align: center
+}
+h1 {
+	text-align: center
+}
+h2 {
+	text-align: center
+}
+button
+{
+	width: 100%;
+    margin: auto;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    border: 2px solid black
+}
+
 </style>
 <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 <script>
