@@ -8,18 +8,39 @@
 <script>
 var searchSuggestionsLoaded = false
 var titleOfMountain = ""
+var isSearched = false
   function searchMountain()
   {
-var mountains = [];
-var updateData = firebase.database().ref("Mountain");
-updateData.on("child_added", function(data, prevChildKey) {
-var data = data.val() 
-mountains.push(data.MountainName)
+    var mountains = [];
+    var updateData = firebase.database().ref("Mountain");
+    updateData.on("child_added", function(data, prevChildKey) {
+    var data = data.val() 
+    mountains.push(data.MountainName)
  })
         firebase.database().ref('Mountains/').set("Data is logged", function(error) {
         if (error) {
             alert("Data could not be saved." + error);
         } else {
+        if(isSearched == false)
+		{
+          var ul = document.createElement("ul")
+          ul.setAttribute('id', 'myUL')
+          for(var i=0;i<mountains.length;i++)
+          {
+            var string = mountains[i]
+            var li = document.createElement("li");   
+            var a = document.createElement("a");
+            var aTitle = document.createTextNode(string);
+            a.appendChild(aTitle)
+            li.appendChild(a);
+            ul.appendChild(li)
+            a.onclick = function() {
+              saveVariableIntoStorage(this.innerHTML);
+            }
+            document.body.appendChild(ul);       
+          }
+          isSearched = true
+        }
     var textfield, filter, ul, li, i;
     textfield = document.getElementById("textField");
     filter = textfield.value.toUpperCase();
@@ -38,45 +59,13 @@ mountains.push(data.MountainName)
 
   }
   
-window.onload = function()
-{
-var mountains = [];
-var updateData = firebase.database().ref("Mountain");
-updateData.on("child_added", function(data, prevChildKey) {
- var data = data.val()
- mountains.push(data.MountainName)
-
- })
-function saveVariableIntoStorage(a)
+  function saveVariableIntoStorage(a)
   {
     sessionStorage.setItem("mountainName", a)
     location.href = "https://jrprogramming.github.io/mountainfinder/mountain.html"
   }
-    
-    firebase.database().ref('Mountains/').set("Data is logged", function(error) {
-        if (error) {
-            alert("Data could not be saved." + error);
-        } else {
-          var ul = document.createElement("ul")
-          ul.setAttribute('id', 'myUL')
-          for(var i=0;i<mountains.length;i++)
-          {
-            var string = mountains[i]
-            var li = document.createElement("li");   
-            var a = document.createElement("a");
-            var aTitle = document.createTextNode(string);
-            a.appendChild(aTitle)
-            li.appendChild(a);
-            ul.appendChild(li)
-            a.onclick = function() {
-              saveVariableIntoStorage(this.innerHTML);
-            }
-            document.body.appendChild(ul);       
-          }
-        }
-    })
-   
-}
+  
+
 </script>
 
 
