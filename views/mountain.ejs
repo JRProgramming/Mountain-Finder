@@ -1,43 +1,98 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mountain Finder</title>
-    <link href="/stylesheets/mountain.css" type="text/css" rel="stylesheet">
+    <title><%= locals.name %> - Mountain Finder</title>
+    <link href="/css/mountain.css" type="text/css" rel="stylesheet">
   </head>
   <body>
-    <h1 id="mountainName"></h1>
-    <image src="" id="image"></image>
-    <br>
-    <br>
+    <h1 id="mountainName"><%= locals.name %></h1>
+    <% if (locals.image) { %>
+    <image src="<%= image %>" id="image"></image>
+    <% } %>
     <table>
+      <% if (locals.website) { %>
       <tr>
         <th><span><p>Link to the website</p></span></th>
-        <th><span><a id="websiteLink" href=""></a></span></th>
+        <th><span><a href="<%= website %>" target="_blank"><%= name %></a></span></th>
       </tr>
+      <% } %>
+      <% if (locals.address) { %>
       <tr>
-        <th><span><p>Amount of snow</p></span></th>
-        <th><span id="amountOfSnow"></span></th>
+        <th><span><p>Address</p></span></th>
+        <th><span><%= address %></span></th>
       </tr>
+      <% } %>
+      <% if (locals.temperature) { %>
       <tr>
-        <th><span><p>Child Friendly Ranking</p></span></th>
-        <th><span id="childFriendly"></span></th>
+        <th><span><p>Current Weather</p></span></th>
+        <th><span><%= temperature %>°F <%= weather %></span></th>
       </tr>
+      <% } else if(locals.weather) { %>
       <tr>
-        <th><span><p>Food Quality Ranking</p></span></th>
-        <th><span id="foodQuality"></span></th>
+        <th><span><p>Current Weather</p></span></th>
+        <th><span><%= weather %></span></th>
       </tr>
+      <% } %>
+      <% if (locals.runCount) { %>
+        <tr>
+          <th><span><p>Run Count</p></span></th>
+          <th><span><%= runCount %></span></th>
+        </tr>
+      <% } %>
+      <% if (locals.longestRun && locals.longestRun !== 'NaN') { %>
+        <tr>
+          <th><span><p>Longest Run</p></span></th>
+          <th><span><%= longestRun %> ft</span></th>
+        </tr>
+      <% } %>
+      <% if (locals.topElevation && locals.bottomElevation && locals.topElevation !== 'Nan' && locals.bottomElevation !== 'NaN') { %>
       <tr>
-        <th><span><p>Price for an adult</p></span></th>
-        <th><span id="priceForAdult"></span></th>
+        <th><span><p>Elevation</p></span></th>
+        <th><span>Peak: <%= topElevation %> ft Base: <%= bottomElevation %> ft</span></th>
       </tr>
+      <% } %>
+      <% if (locals.elevationDifference && locals.elevationDifference !== 'NaN') { %>
       <tr>
-        <th><span><p>Price for a child</p></span></th>
-        <th><span id="priceForChild"></span></th>
+        <th><span><p>Elevation Difference</p></span></th>
+        <th><span><%= elevationDifference %> ft</span></th>
       </tr>
-      <tr>
-        <th><span><p>Price for a senior</p></span></th>
-        <th><span id="priceForSenior"></span></th>
-    </table>
-    <script src="/javascripts/script.js"></script>
+      <% } %>
+      <% if (locals.nightSkiing) { %>
+        <tr>
+          <th><span><p>Night Skiing?</p></span></th>
+          <th><span><%= nightSkiing %></span></th>
+        </tr>
+      <% } %>
+      <% if (locals.annualSnowfall && locals.annualSnowfall !== 'NaN') { %>
+        <tr>
+          <th><span><p>Annual Snowfall</p></span></th>
+          <th><span><%= annualSnowfall %> ft</span></th>
+        </tr>
+      <% } %>
+      <% if (locals.skiableAcreage) { %>
+        <tr>
+          <th><span><p>Skiable Acreage</p></span></th>
+          <th><span><%= skiableAcreage %> acres</span></th>
+        </tr>
+      <% } %>
+      <% if (locals.operatingStatus) { %>
+        <tr>
+          <th><span><p>Operating Status</p></span></th>
+          <th><span><%= operatingStatus %></span></th>
+        </tr>
+      <% } %>
+      <% if (locals.hourlyLiftCapacity) { %>
+        <tr>
+          <th><span><p>Hourly Lift Capacity</p></span></th>
+          <th><span><%= hourlyLiftCapacity %></span></th>
+        </tr>
+      <% } %>
+      <% if (locals.openingYear) { %>
+        <tr>
+          <th><span><p>Opening Year</p></span></th>
+          <th><span><%= openingYear %></span></th>
+        </tr>
+      <% } %>
+   </table>
   </body>
 </html>

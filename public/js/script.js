@@ -3,7 +3,9 @@ window.onload = () => {
   fetch('/api')
   .then(response => response.json())
   .then(response => {
-    mountains = response;
+    response.forEach(mountain => {
+      mountains.push(JSON.parse(mountain));
+    })
   });
 }
 function searchMountain() {
@@ -12,12 +14,12 @@ function searchMountain() {
     ul.setAttribute('id', 'myUL');
     const textfield = document.getElementById("textField").value.toLowerCase();
     mountains.forEach(mountain => {
-      if(textfield.length > 2 && mountain && mountain.toLowerCase().indexOf(textfield) > -1) {
+      if(textfield.length > 2 && mountain.name && mountain.name.toLowerCase().indexOf(textfield) > -1) {
         const li = document.createElement("li");
         const a = document.createElement("a");
-        const textNode = document.createTextNode(mountain);
+        const textNode = document.createTextNode(mountain.name);
         a.appendChild(textNode);
-        a.href = `/mountains/${mountain}`;
+        a.href = `/mountain/${mountain.id}`;
         li.appendChild(a);
         ul.appendChild(li);
       }

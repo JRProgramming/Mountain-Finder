@@ -1,0 +1,26 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+table {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+    margin-bottom: 10px;
+}
+td, th {
+    text-align: center;
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#image {
+    min-width: 30%;
+    max-width: 50%;
+    margin: 10px;
+}

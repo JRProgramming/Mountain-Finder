@@ -1,5 +1,4 @@
 const express = require('express');
-const request = require('postman-request');
 const router = express.Router();
 
 /* GET home page. */
